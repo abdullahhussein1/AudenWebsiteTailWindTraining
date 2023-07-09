@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <title>Auden</title>
+  </head>
+  <body>
+    <div
+      id="ma"
+      class="container flex flex-col font-display xl:w-4/5 mx-auto px-2 min-h-screen divide-y"
+    >
+      <nav
+        class="flex justify-between items-center py-1 sticky top-0 left-0 right-0 bg-white"
+      >
+        <div class="flex gap-2 items-center">
+          <i class="bx bx-search cursor-pointer hover:text-red-600"></i>
+          <i class="bx bx-moon cursor-pointer hover:text-red-600"></i>
+        </div>
+        <div
+          class="text-2xl sm:text-3xl font-bold cursor-pointer text-transparent bg-gradient-to-r from-red-600 to-yellow-300 hover:tracking-wider bg-clip-text duration-500 transition-all"
+        >
+          Auden
+        </div>
+        <div class="flex gap-2 items-center">
+          <p
+            class="text-xs font-bold hidden sm:inline cursor-pointer hover:text-red-600"
+          >
+            Log in
+          </p>
+          <i
+            class="bx bx-log-in sm:hidden cursor-pointer hover:text-red-600"
+          ></i>
+
+          <!-- drawer init and show -->
+          <div class="text-center">
+            <button
+              type="button"
+              data-drawer-target="drawer-navigation"
+              data-drawer-show="drawer-navigation"
+              aria-controls="drawer-navigation"
+            >
+              <i
+                class="bx bx-menu-alt-right sm:hidden cursor-pointer hover:text-red-600"
+              ></i>
+            </button>
+          </div>
+
+          <!-- aaa -->
+          <button
+            class="bg-red-500 text-slate-50 hidden sm:inline text-xs font-bold px-2 py-1 hover:brightness-110 rounded-full cursor-pointer"
+          >
+            Subscribe
+          </button>
+        </div>
+      </nav>
+      <!-- drawer component -->
+      <div
+        id="drawer-navigation"
+        class="fixed top-0 left-0 z-40 w-2/3 sm:hidden h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800"
+        tabindex="-1"
+        aria-labelledby="drawer-navigation-label"
+      >
+        <h5
+          id="drawer-navigation-label"
+          class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400"
+        >
+          Menu
+        </h5>
+        <button
+          type="button"
+          data-drawer-hide="drawer-navigation"
+          aria-controls="drawer-navigation"
+          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+        >
+          <svg
+            aria-hidden="true"
+            class="w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <span class="sr-only">Close menu</span>
+        </button>
+        <div class="py-4 overflow-y-auto">
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                  <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                </svg>
+                <span class="ml-3">Dashboard</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="hidden sm:block sticky top-10">
+        <ol class="flex justify-center gap-x-3 text-[13px] p-2 text-slate-600">
+          <li
+            class="decoration-red-500 hover:underline hover:underline-offset-[13px]"
+          >
+            <a href="">Home Pages</a>
+          </li>
+          <li
+            class="decoration-red-500 hover:underline hover:underline-offset-[13px]"
+          >
+            <a href="">Custom Posts</a>
+          </li>
+          <li
+            class="decoration-red-500 hover:underline hover:underline-offset-[13px]"
+          >
+            <a href="">Style Guide</a>
+          </li>
+          <li
+            class="decoration-red-500 hover:underline hover:underline-offset-[13px]"
+          >
+            <a href="">Customization</a>
+          </li>
+          <li
+            class="decoration-red-500 hover:underline hover:underline-offset-[13px]"
+          >
+            <a href="">Tags</a>
+          </li>
+          <li
+            class="decoration-red-500 hover:underline hover:underline-offset-[13px]"
+          >
+            <a href="">Contact</a>
+          </li>
+
+          <button
+            id="dropdownDefaultButton"
+            data-dropdown-toggle="dropdown"
+            type="button"
+          >
+            <i
+              class="bx bx-dots-horizontal cursor-pointer hover:text-red-500"
+            ></i>
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            id="dropdown"
+            class="z-10 hidden bg-white/95 backdrop-blur divide-y divide-gray-100 rounded-xl overflow-clip shadow-xl w-40 dark:bg-gray-700"
+          >
+            <ul
+              class="text-sm divide-y text-gray-700 dark:text-gray-200"
+              aria-labelledby="dropdownDefaultButton"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block p-2 text-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Membership</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block p-2 text-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Sign In</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block p-2 text-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Sign Up</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block p-2 text-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Account</a
+                >
+              </li>
+            </ul>
+          </div>
+        </ol>
+      </div>
+
+      <!-- main -->
+      <main
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-6 px-1"
+      >
+        <section class="flex flex-col sm:flex-row-reverse gap-3 col-span-full">
+          <div class="rounded-md overflow-clip sm:w-3/5">
+            <img
+              src="../assets/images/grey_chair.jpg"
+              class="hover:scale-105 transition-transform duration-500 object-cover w-full h-52 sm:w-auto sm:h-full"
+              alt="grey chair"
+            />
+          </div>
+          <div class="flex flex-col justify-center sm:py-20 gap-3 sm:w-2/5">
+            <div class="flex items-center gap-1">
+              <button
+                class="border text-[10px] text-slate-600 hover:border-red-500 hover:text-red-500 font-semibold px-2 py-[3px] border-slate-500 rounded-[4px]"
+              >
+                Mindset
+              </button>
+              <div
+                class="bg-yellow-400/95 text-[10px] font-semibold px-2 py-[3px] rounded-[4px]"
+              >
+                members
+              </div>
+              <i class="bx bx-star text-yellow-400 cursor-pointer"></i>
+            </div>
+            <div
+              class="font-extrabold text-xl sm:text-2xl lg:text-3xl text-slate-800 hover:text-red-500"
+            >
+              <a href="">Working from home can make people more productive</a>
+            </div>
+            <div class="flex gap-3 items-center">
+              <div
+                class="rounded-full overflow-clip w-9 h-9 border-2 border-yellow-400"
+              >
+                <a href=""
+                  ><img
+                    src="../assets/images/author-harvey-1.jpg"
+                    alt=""
+                    class="object-cover w-full h-full"
+                /></a>
+              </div>
+              <div class="flex flex-col text-[12px] font-medium text-slate-600">
+                <p class="hover:text-red-500"><a href="">Shex Jaafar</a></p>
+                <p>22/2/2025</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="flex flex-col gap-3">
+          <div class="rounded-md overflow-clip">
+            <img
+              src="../assets/images/pink.jpg"
+              class="hover:scale-105 transition-all duration-500 object-cover w-full h-52"
+              alt="grey chair"
+            />
+          </div>
+          <div class="flex items-center gap-1">
+            <button
+              class="border text-[10px] text-slate-600 hover:border-red-500 hover:text-red-500 font-semibold px-2 py-[3px] border-slate-500 rounded-[4px]"
+            >
+              Technology
+            </button>
+            <div
+              class="bg-yellow-400/95 text-[10px] font-semibold px-2 py-[3px] rounded-[4px]"
+            >
+              members
+            </div>
+            <i class="bx bx-star text-yellow-400 cursor-pointer"></i>
+          </div>
+          <div class="font-extrabold text-xl text-slate-800 hover:text-red-500">
+            <a href="">Working from home can make people more productive</a>
+          </div>
+          <div class="flex gap-3 items-center">
+            <div
+              class="rounded-full overflow-clip w-9 h-9 border-2 border-yellow-400"
+            >
+              <a href=""
+                ><img
+                  src="../assets/images/author-harvey-1.jpg"
+                  alt=""
+                  class="object-cover w-full h-full"
+              /></a>
+            </div>
+            <div class="flex flex-col text-[12px] font-medium text-slate-600">
+              <p class="hover:text-red-500"><a href="">Shex Jaafar</a></p>
+              <p>22/2/2025</p>
+            </div>
+          </div>
+        </section>
+        <section class="flex flex-col gap-3">
+          <div class="rounded-md overflow-clip">
+            <img
+              src="../assets/images/pink_green_headphone.jpg"
+              class="hover:scale-105 transition-all duration-500 object-cover w-full h-52"
+              alt="grey chair"
+            />
+          </div>
+          <div class="flex items-center gap-1">
+            <button
+              class="border text-[10px] text-slate-600 hover:border-red-500 hover:text-red-500 font-semibold px-2 py-[3px] border-slate-500 rounded-[4px]"
+            >
+              Science
+            </button>
+          </div>
+          <div class="font-extrabold text-xl text-slate-800 hover:text-red-500">
+            <a href="">Working from home can make people more productive</a>
+          </div>
+          <div class="flex gap-3 items-center">
+            <div
+              class="rounded-full overflow-clip w-9 h-9 border-2 border-yellow-400"
+            >
+              <a href=""
+                ><img
+                  src="../assets/images/author-harvey-1.jpg"
+                  alt=""
+                  class="object-cover w-full h-full"
+              /></a>
+            </div>
+            <div class="flex flex-col text-[12px] font-medium text-slate-600">
+              <p class="hover:text-red-500"><a href="">Shex Jaafar</a></p>
+              <p>22/2/2025</p>
+            </div>
+          </div>
+        </section>
+        <section class="flex flex-col gap-3">
+          <div class="rounded-md overflow-clip">
+            <img
+              src="../assets/images/yellow_controller.jpg"
+              class="hover:scale-105 transition-all duration-500 object-cover w-full h-52"
+              alt="grey chair"
+            />
+          </div>
+          <div class="flex items-center gap-1">
+            <button
+              class="border text-[10px] text-slate-600 hover:border-red-500 hover:text-red-500 font-semibold px-2 py-[3px] border-slate-500 rounded-[4px]"
+            >
+              Mindset
+            </button>
+            <div
+              class="bg-yellow-400/95 text-[10px] font-semibold px-2 py-[3px] rounded-[4px]"
+            >
+              members
+            </div>
+            <i class="bx bx-star text-yellow-400 cursor-pointer"></i>
+          </div>
+          <div class="font-extrabold text-xl text-slate-800 hover:text-red-500">
+            <a href="">Working from home can make people more productive</a>
+          </div>
+          <div class="flex gap-3 items-center">
+            <div
+              class="rounded-full overflow-clip w-9 h-9 border-2 border-yellow-400"
+            >
+              <a href=""
+                ><img
+                  src="../assets/images/author-harvey-1.jpg"
+                  alt=""
+                  class="object-cover w-full h-full"
+              /></a>
+            </div>
+            <div class="flex flex-col text-[12px] font-medium text-slate-600">
+              <p class="hover:text-red-500"><a href="">Shex Jaafar</a></p>
+              <p>22/2/2025</p>
+            </div>
+          </div>
+        </section>
+        <section class="flex flex-col gap-3">
+          <div class="rounded-md overflow-clip">
+            <img
+              src="../assets/images/pink_hand.jpg"
+              class="hover:scale-105 transition-all duration-500 object-cover w-full h-52"
+              alt="grey chair"
+            />
+          </div>
+          <div class="flex items-center gap-1">
+            <button
+              class="border text-[10px] text-slate-600 hover:border-red-500 hover:text-red-500 font-semibold px-2 py-[3px] border-slate-500 rounded-[4px]"
+            >
+              Technology
+            </button>
+          </div>
+          <div class="font-extrabold text-xl text-slate-800 hover:text-red-500">
+            <a href="">Working from home can make people more productive</a>
+          </div>
+          <div class="flex gap-3 items-center">
+            <div
+              class="rounded-full overflow-clip w-9 h-9 border-2 border-yellow-400"
+            >
+              <a href=""
+                ><img
+                  src="../assets/images/author-harvey-1.jpg"
+                  alt=""
+                  class="object-cover w-full h-full"
+              /></a>
+            </div>
+            <div class="flex flex-col text-[12px] font-medium text-slate-600">
+              <p class="hover:text-red-500"><a href="">Shex Jaafar</a></p>
+              <p>22/2/2025</p>
+            </div>
+          </div>
+        </section>
+        <section class="flex justify-center col-span-full md:col-span-2">
+          <button
+            class="w-3/5 border hover:tracking-wider border-red-600 text-red-600 text-xs font-bold px-8 py-2 rounded-md duration-300 transition-all"
+          >
+            LOAD MORE POSTS
+          </button>
+        </section>
+        <!-- aaa -->
+        <section
+          class="flex flex-col gap-3 text-center col-span-full lg:col-span-1 row-span-2 lg:row-start-2 lg:col-start-3 lg:col-end-4"
+        >
+          <div class="flex flex-col gap-3 bg-slate-50 rounded-md p-4">
+            <p class="font-bold text-slate-700">Auden</p>
+            <p class="text-slate-700 text-xs">
+              Auden is a modern magazine style Ghost theme with dark and light
+              theme and membership support
+            </p>
+            <div class="flex justify-center gap-1 text-slate-700">
+              <i
+                class="bx bxl-react bx-sm cursor-pointer hover:text-sky-400"
+              ></i>
+              <i
+                class="bx bxl-nodejs bx-sm cursor-pointer hover:text-green-400"
+              ></i>
+              <i
+                class="bx bxl-javascript bx-sm cursor-pointer hover:text-yellow-400"
+              ></i>
+              <i
+                class="bx bxl-java bx-sm cursor-pointer hover:text-red-400"
+              ></i>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3 bg-slate-50 rounded-md p-4">
+            <p class="font-bold text-sm text-slate-700">Explore topics</p>
+            <ol class="flex flex-col divide-y text-sm">
+              <li
+                class="flex justify-between p-2 text-slate-500 font-medium hover:text-red-500"
+              >
+                <p>Mindset</p>
+                10
+              </li>
+              <li
+                class="flex justify-between p-2 text-slate-500 font-medium hover:text-red-500"
+              >
+                <p>Technology</p>
+                6
+              </li>
+              <li
+                class="flex justify-between p-2 text-slate-500 font-medium hover:text-red-500"
+              >
+                <p>Science</p>
+                20
+              </li>
+              <li
+                class="flex justify-between p-2 text-slate-500 font-medium hover:text-red-500"
+              >
+                <p>Space</p>
+                8
+              </li>
+              <li
+                class="flex justify-between p-2 text-slate-500 font-medium hover:text-red-500"
+              >
+                <p>Future</p>
+                5
+              </li>
+              <li
+                class="flex justify-between p-2 text-slate-500 font-medium hover:text-red-500"
+              >
+                <p>Minimalism</p>
+                2
+              </li>
+            </ol>
+          </div>
+        </section>
+        <section class="flex flex-col col-span-full gap-4">
+          <p class="font-bold text-sm text-slate-700">Explore topics</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div
+              class="flex justify-center items-center overflow-clip rounded-md relative group"
+            >
+              <img
+                class="h-40 w-full object-cover brightness-50 group-hover:brightness-[0.2] duration-500 transition-all"
+                src="../assets/images/tag-mindset.jpg"
+                alt="mindset image"
+              />
+              <div
+                class="text-center absolute text-white font-semibold group-hover:text-yellow-500 duration-500 transition-all"
+              >
+                <p class="text-3xl">10+</p>
+                <p class="text-md">Mindset</p>
+              </div>
+            </div>
+            <div
+              class="flex justify-center items-center overflow-clip rounded-md relative group"
+            >
+              <img
+                class="h-40 w-full object-cover brightness-50 group-hover:brightness-[0.2] duration-500 transition-all"
+                src="../assets/images/tag-technology.jpg"
+                alt="mindset image"
+              />
+              <div
+                class="text-center absolute text-white font-semibold group-hover:text-yellow-500 duration-500 transition-all"
+              >
+                <p class="text-3xl">6+</p>
+                <p class="text-md">Technology</p>
+              </div>
+            </div>
+            <div
+              class="flex justify-center items-center overflow-clip rounded-md relative group"
+            >
+              <img
+                class="h-40 w-full object-cover brightness-50 group-hover:brightness-[0.2] duration-500 transition-all"
+                src="../assets/images/tag-science.jpg"
+                alt="mindset image"
+              />
+              <div
+                class="text-center absolute text-white font-semibold group-hover:text-yellow-500 duration-500 transition-all"
+              >
+                <p class="text-3xl">20+</p>
+                <p class="text-md">Science</p>
+              </div>
+            </div>
+            <div
+              class="flex justify-center items-center overflow-clip rounded-md relative group"
+            >
+              <img
+                class="h-40 w-full object-cover brightness-50 group-hover:brightness-[0.2] duration-500 transition-all"
+                src="../assets/images/tag-space.jpg"
+                alt="mindset image"
+              />
+              <div
+                class="text-center absolute text-white font-semibold group-hover:text-yellow-500 duration-500 transition-all"
+              >
+                <p class="text-3xl">8+</p>
+                <p class="text-md">Space</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="space-y-4 px-1 py-4 divide-y">
+        <section class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+          <div class="space-y-3">
+            <p class="font-bold text-slate-700">Navigation</p>
+            <ol
+              class="flex sm:flex-col gap-x-4 gap-y-2 text-sm text-slate-500 flex-wrap"
+            >
+              <li class="hover:text-red-500">
+                <a href=""> Home Pages</a>
+              </li>
+              <li class="hover:text-red-500">
+                <a href=""> Custom Posts</a>
+              </li>
+              <li class="hover:text-red-500">
+                <a href=""> Style Guide</a>
+              </li>
+              <li class="hover:text-red-500">
+                <a href=""> Customization</a>
+              </li>
+              <li class="hover:text-red-500">
+                <a href="">Tags</a>
+              </li>
+              <li class="hover:text-red-500">
+                <a href="">Contact</a>
+              </li>
+            </ol>
+          </div>
+          <div class="space-y-3">
+            <p class="font-bold text-slate-700">Useful links</p>
+            <ol class="flex sm:flex-col gap-4 text-sm text-slate-500 flex-wrap">
+              <li class="hover:text-red-500">
+                <a href="">Membership</a>
+              </li>
+              <li class="hover:text-red-500">
+                <a href="">Sign In</a>
+              </li>
+              <li class="hover:text-red-500">
+                <a href="">Sign Up</a>
+              </li>
+              <li class="hover:text-red-500">
+                <a href="">Account</a>
+              </li>
+            </ol>
+          </div>
+          <div class="space-y-3">
+            <p class="font-bold text-slate-700">Social Media</p>
+            <div
+              class="flex flex-col w-fit gap-4 text-sm text-slate-500 flex-wrap"
+            >
+              <div
+                class="flex items-center gap-x-2 hover:text-red-500 cursor-pointer"
+              >
+                <i class="bx bxl-facebook"></i>
+                Facebook
+              </div>
+              <div
+                class="flex items-center gap-x-2 hover:text-red-500 cursor-pointer"
+              >
+                <i class="bx bxl-instagram"></i>
+                Instagram
+              </div>
+              <div
+                class="flex items-center gap-x-2 hover:text-red-500 cursor-pointer"
+              >
+                <i class="bx bxl-twitter"></i>
+                Twitter
+              </div>
+              <div
+                class="flex items-center gap-x-2 hover:text-red-500 cursor-pointer"
+              >
+                <i class="bx bxl-linkedin"></i>
+                Linkedin
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col space-y-3">
+            <p class="font-bold text-slate-700">Auden</p>
+            <p class="text-slate-500 text-sm">
+              Auden is a modern magazine style Ghost theme with dark and light
+              theme and membership support
+            </p>
+            <div
+              class="flex justify-between items-center text-slate-900 rounded-full group p-[2px] pl-3 overflow-clip border text-sm font-light border-slate-100 hover:border-red-500 focus-within:border-red-500 w-4/5"
+            >
+              <input
+                type="text"
+                placeholder="email@example.com"
+                class="w-4/5 outline-none border-none focus:outline-none text-xs placeholder-opacity-40"
+              />
+              <button
+                class="rounded-full self-end bg-red-500 text-white hover:animate-spin-once focus:animate-spin-once group-active:animate-spin-once focus:outline-red-600"
+              >
+                <i
+                  class="flex justify-center items-center bx bx-right-arrow-alt bx-sm w-8 h-8"
+                ></i>
+              </button>
+            </div>
+          </div>
+        </section>
+        <section
+          class="flex flex-col gap-1 sm:flex-row text-slate-500 p-4 text-sm"
+        >
+          <p>© 2023 Auden.</p>
+          <p>Published with Ghost & Auden.</p>
+        </section>
+      </footer>
+      <button
+        class="rounded-full self-end bg-slate-50 text-slate-500 border-2 overflow-clip hover:text-indigo-500 hover:border-indigo-500 fixed bottom-2 right-2"
+      >
+        <a href="#ma"
+          ><i
+            class="flex justify-center items-center bx bx-up-arrow-alt bx-sm w-10 h-10"
+          ></i
+        ></a>
+      </button>
+    </div>
+    <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+  </body>
+</html>
